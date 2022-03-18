@@ -10,7 +10,9 @@ const PORT = 8080;
 app.use(express.json());
 app.use(cors());  //////////////////////////////////////////
 
-mongoose.connect('mongodb://localhost:27017/projeto')
+const uri = 'mongodb+srv://roberto:PGupFSoeUpiXyKS2@cluster0.ynjbf.mongodb.net/pipo?retryWrites=true&w=majority';
+
+mongoose.connect(uri)
     .then(() => {
         console.log('Banco UP');
     })
