@@ -1,3 +1,4 @@
+require('dotenv').config;
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -60,6 +61,6 @@ app.delete('/deletarProjeto/:id', async (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log('Servidor rodando na porta ' + PORT);
 });
